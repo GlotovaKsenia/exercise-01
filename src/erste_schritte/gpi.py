@@ -1,0 +1,5 @@
+name = input("Artikelname: ")
+net_price = float(input("Nettopreis: "))
+tax_rate = float(input("Steuersatz (in %): "))
+gross_price = round(net_price * (1 + tax_rate / 100), 2)
+print(f"Bruttopreis: {gross_price}")
