@@ -1,1 +1,1 @@
-DHBW Modul Einführung in Programmierung.
+DHBW Modul Einführung in Programmierung. Version 1.0
