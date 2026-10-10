@@ -7,7 +7,9 @@ authors = [
     { name = "ksenia.glotova", email = "ksenia.a.glotova@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "numpy>=2.5.3",
+]
 
 [project.scripts]
 erste-schritte = "erste_schritte:main"
