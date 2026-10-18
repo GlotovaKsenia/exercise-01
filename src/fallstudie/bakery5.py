@@ -1,4 +1,9 @@
 class Product:
+    artikelnummer: int = 0
+    name: str = "unbekannt"
+    warengruppe: str = "standart"
+    nettopreis: float = 0.0
+
     def __init__(self, artikelnummer, name, warengruppe, nettopreis):
         self.artikelnummer = artikelnummer
         self.name = name
