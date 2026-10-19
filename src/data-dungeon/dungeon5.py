@@ -1,4 +1,5 @@
-import random
+#import random
+import dungeon_stats
 energy = 100
 experience = 0
 round = 1
@@ -13,7 +14,7 @@ while True:
             print("gewonnen")
         break
 
-    r = random.randint(5,20)
+    r = dungeon_stats.roll_dice(5,20)#random.randint(5,20)
     energy -= r
     experience += 10
     print(f"Runde: {round} Energie: {energy}")
