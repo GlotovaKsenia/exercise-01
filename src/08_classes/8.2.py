@@ -13,6 +13,13 @@ class Circle:
     def sticker_price(self, price_per_cm2: float = 0.05):
         total = Circle.area(self) * price_per_cm2
         return round(total, 2)
+    @classmethod
+    def from_diameter(cls, diameter):
+        return cls(radius=diameter/2)
+
+test = Circle.from_diameter(4)
+print(test.r)
+print(test.area())
 
 class Rectangle:
     def __init__(self, width, length):
@@ -37,6 +44,14 @@ class StorageUnit:
         self.w = width
         self.h = height
         StorageUnit.units_built += 1
+    @classmethod
+    def built_so_far(cls):
+        return cls.units_built
+
+    @staticmethod
+    def volume_from_dimensions(width, height, length):
+        return width*height*length
+
 
     def volume(self):
         return round(self.l * self.h * self.w, 2)
@@ -45,13 +60,20 @@ class StorageUnit:
         total = StorageUnit.volume(self) * pp_m3
         return round(total, 2)
 
-
+print("-----------------------")
+print(StorageUnit.built_so_far())
+print(StorageUnit.volume_from_dimensions(2,2,2))
+print("-----------------------")
 class Car:
     def __init__(self, brand, model, year, mileage = 0):
         self.b = brand
         self.m = model
         self.y = year
         self._mileage = mileage
+    @classmethod
+    def from_text(cls, line):
+        brand, model, year, mileage = line.split(";")
+        return cls(brand, model, year, mileage)
 
     def drive(self, km):
         if km<=0:
@@ -61,6 +83,8 @@ class Car:
 
     def __str__(self):
         return f"{self.b} {self.m} ({self.y}), {self._mileage} km"
+
+print(Car.from_text("Test;modell;2000;"))
 
 class Article:
     vat_rate = 0.07
