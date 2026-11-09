@@ -6,6 +6,8 @@ class Item(TypedDict):
     weight: int
     value: int
 
+
+
 MAP: dict[str, list[str]] = {
     "Eingang": ["Archiv","Lab"],
     "Archiv":["Eingang","Bib"],
